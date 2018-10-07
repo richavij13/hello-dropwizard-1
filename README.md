@@ -34,25 +34,25 @@ To test the example application run the following commands.
 Here are the Steps
 
 1. Build the DockerImage with your changes and tag as latest.
-   - Docker compose is picking the latest image tag, hence below are tagging the image as latest. 
+     - Docker compose is picking the latest image tag, hence below are tagging the image as latest. 
    
-``` docker -D build -t hello-dropwizard:latest -f docker/Dockerfile . ```
+         ``` docker -D build -t hello-dropwizard:latest -f docker/Dockerfile . ```
 
 
 2. Start all Docker Containers  - Nginx and Dropwizard via Docker Compose.
- - Nginx will listen on port 80 and will proxy all request to the port 8080 of Dropwizard container.
- - Nginx will also do the redirct of /hello to /hello-world as requested in the tasks list.
- - Nginx also  listen on port 81 and will proxy all request to the port 8081 of Dropwizard container.
+   - Nginx will listen on port 80 and will proxy all request to the port 8080 of Dropwizard container.
+   - Nginx will also do the redirct of /hello to /hello-world as requested in the tasks list.
+   - Nginx also  listen on port 81 and will proxy all request to the port 8081 of Dropwizard container.
 
-
-``` cd compose && docker-compose up -d ```
+         ``` cd compose && docker-compose up -d ```
 
 
 3. Check the Below Mentioned Tested Workflows. 
 
+
 4. Stop all Docker Containers.
 
-``` cd compose && docker-compose down ```
+         ``` cd compose && docker-compose down ```
 
 
 
