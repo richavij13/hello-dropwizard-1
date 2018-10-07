@@ -44,7 +44,7 @@ Here are the Steps
    - Nginx will also do the redirct of /hello to /hello-world as requested in the tasks list.
    - Nginx also  listen on port 81 and will proxy all request to the port 8081 of Dropwizard container.
 
-         ``` cd compose && docker-compose up -d ```
+       ```cd compose && docker-compose up -d```
 
 
 3. Check the Below Mentioned Tested Workflows. 
@@ -52,7 +52,7 @@ Here are the Steps
 
 4. Stop all Docker Containers.
 
-         ``` cd compose && docker-compose down ```
+        ```cd compose && docker-compose down```
 
 
 
