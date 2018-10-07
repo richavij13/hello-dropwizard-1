@@ -26,10 +26,10 @@ To test the example application run the following commands.
   * template: OK
 
 # Dev Environment Exercise.
-* We have dockerized the application,  (Ref the file [a link](https://github.com/ankitschopra/hello-dropwizard/blob/master/docker/Dockerfile)). 
-* Docker Compose is used to manage multiple docker containers and their inter connectivity. In our case we have 2 containers -  Nginx and Dropwizard.  ( Ref File - [a link](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/docker-compose.yml) )
+* We have dockerized the application,  (Ref the file [Dockerfile](https://github.com/ankitschopra/hello-dropwizard/blob/master/docker/Dockerfile)). 
+* Docker Compose is used to manage multiple docker containers and their inter connectivity. In our case we have 2 containers -  Nginx and Dropwizard.  ( Ref File - [docker-compose.yml](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/docker-compose.yml) )
 * Everytime developer want to check/release, he needs to build the docker image locally on his machine. This process can be automated for production lifecycle using CI/CD tool based on the commit at VCS. 
-* We are using Nginx to do the redirect ( /hello -> /hello-world ) and a proxy layer before the application and admin endpoint. Nginx Configuration file - [a link](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/nginx/default.conf)
+* We are using Nginx to do the redirect ( /hello -> /hello-world ) and a proxy layer before the application and admin endpoint. Nginx Configuration file - [nginx/default.conf](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/nginx/default.conf)
 
 Here are the Steps
 
