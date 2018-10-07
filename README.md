@@ -26,24 +26,31 @@ To test the example application run the following commands.
   * template: OK
 
 # Dev Environment Exercise.
-* We are using the dockerized version of the application.
-* We are using  Docker Compose to manage multiple docker containers and their inter connectivity.
+* We have dockerized the application,  (Ref the file [a link](https://github.com/ankitschopra/hello-dropwizard/blob/master/docker/Dockerfile)). 
+* Docker Compose is used to manage multiple docker containers and their inter connectivity. In our case we have 2 containers -  Nginx and Dropwizard.  ( Ref File - [a link](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/docker-compose.yml) )
 * Everytime developer want to check/release, he needs to build the docker image locally on his machine. This process can be automated for production lifecycle using CI/CD tool based on the commit at VCS. 
-* We are using Nginx to do the redirect ( /hello -> /hello-world ) and a proxy layer before the application and admin endpoint.
+* We are using Nginx to do the redirect ( /hello -> /hello-world ) and a proxy layer before the application and admin endpoint. Nginx Configuration file - [a link](https://github.com/ankitschopra/hello-dropwizard/blobblob/master/compose/nginx/default.conf)
 
 Here are the Steps
 
-1. Build the DockerImage with your changes  - 
+1. Build the DockerImage with your changes and tag as latest.
+   - Docker compose is picking the latest image tag, hence below are tagging the image as latest. 
 ``` docker -D build -t hello-dropwizard:latest -f docker/Dockerfile . ```
 
-2. Starting the Docker Containers  - Nginx and Dropwizard Both 
+2. Start all Docker Containers  - Nginx and Dropwizard via Docker Compose.
+ - Nginx will listen on port 80 and will proxy all request to the port 8080 of Dropwizard container.
+ - Nginx will also do the redirct of /hello to /hello-world as requested in the tasks list.
+ - Nginx also  listen on port 81 and will proxy all request to the port 8081 of Dropwizard container.
+
 ``` cd compose && docker-compose up -d ```
 
-It will start Nginx Container and Dropwizard Container.
+3. Check the Below Mentioned Tested Workflows. 
 
-Nginx will listen on port 80 and will proxy all request to the port 8080 of Dropwizard container.
-Nginx will do the redirct of /hello to /hello-world
-Nginx also  listen on port 81 and will proxy all request to the port 8081 of Dropwizard container.
+4. Stop all Docker Containers.
+``` cd compose && docker-compose down ```
+
+
+
 
 
 ## Tested Worlflow 
